@@ -6,4 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   canvasCtx.fillStyle = 'black';
   canvasCtx.fillRect(0, 0, canvas.width, canvas.height)
+  let start = document.getElementById("start")
+  let initial = document.getElementById("initial")
+
+  start.onclick = function() {
+    initial.style.webkitAnimation = "disappear 2s"
+    setTimeout(() => {
+      initial.style.display = "none"
+    }, 2000);
+  }
 })
