@@ -1,3 +1,4 @@
+
 # Moneta
   Moneta is a data visualization/education interactive demo that intends to help the user familiarize themselves with the stock market the power of compound interest.
   User will be able to input their income, expenditure and savings and select from companies whos product they may user in their everyday life to see how their money can grow exponentially.
@@ -8,6 +9,9 @@
   3. Graph will dynamically plot user's returns given their cash flow information and stock returns
   4. Bonus Features
      * Interactive at the beginning to demonstrate the effect of inflation on purchasing power and segways into encouraging participations in the stock market.
+
+## Wireframe
+![wireframe](https://user-images.githubusercontent.com/82133872/127006990-96ddb798-1ece-4812-94d3-ecbc7710885f.png)
 
 ## Technologies 
   * Javascript
@@ -22,3 +26,5 @@
     * Graph and animations
   * Day 4
     * Touching up, smoothing out animations
+
+
