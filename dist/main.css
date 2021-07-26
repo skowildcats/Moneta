@@ -17,35 +17,49 @@ div, h1, h2, h3, p, button{
   z-index: -5;
 }
 
-#initial {
+#introduction {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 20px;
   font-family: 'Merriweather', serif;
   display: flex; flex-direction: column;
 }
 
-#money {
-  text-align: center;
-}
-
 #start {
   width: 30%;
+  margin-top: 10px;
+  padding: 10px;
   margin-left: auto; margin-right: auto;
   border: 1px solid white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
+
+/*!********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/keyframe.scss ***!
+  \********************************************************************************************************/
 @-webkit-keyframes disappear {
   0% {
-    opacity: .5;
+    opacity: 1;
   }
 
   100% {
     opacity: 0;
   }
 }
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: .25;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

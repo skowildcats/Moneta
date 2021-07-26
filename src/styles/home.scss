@@ -5,32 +5,22 @@
   z-index: -5;
 }
 
-#initial {
+#introduction {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 20px;
   font-family: 'Merriweather', serif;
   display: flex; flex-direction: column;
 }
 
-#money {
-  text-align: center;
-}
-
 #start {
   width: 30%;
+  margin-top: 10px;
+  padding: 10px;
   margin-left: auto; margin-right: auto;
   border: 1px solid white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-@-webkit-keyframes disappear {
-  0% {
-    opacity: .5;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
