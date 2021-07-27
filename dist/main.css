@@ -43,6 +43,11 @@
   }
 }
 
+@-webkit-keyframes box-show {
+  0% {width: 1px}
+  100%{width: 500px;}
+}
+
 
 
 
@@ -151,6 +156,22 @@ input[type="submit"] {
 
 
 
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/stock.scss ***!
+  \*****************************************************************************************************/
+#stocks {
+  border: 1px solid white;
+  position: absolute;
+  width: 500px;
+  height: 150px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, 75%);
+  display: none;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/graph.scss ***!
+  \*****************************************************************************************************/
 
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
