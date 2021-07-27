@@ -28,12 +28,11 @@
       <br>
       <br>
       This interactive demo intends to demonstrate the power of compound interest and provides a seamless introduction to stocks and indexes.
-
     </div>
     <button id="start">Begin Demo</button>
   </div>
   <form id="user-info">
-    <div>
+    <div id="info-header">
       Enter your information below
     </div>
     <input type="number" min="0">
@@ -41,16 +40,19 @@
     <div>
       Income in USD
     </div>
-    <div id="savings">
-      <input type="number" min="0" max="100">
-      Savings as a percentage of income
-      </input>
-      <div id="percentage">
-        %
-      </div>
+    <input type="number" min="0" max="100">
+    </input>
+    <div>
+      Savings percentage
     </div>
     <input id="submit-info" type="submit" value="Continue">
   </form>
+  <div id="chart">
+    Chart
+  </div>
+  <div id="stocks">
+    Stock
+  </div>
 </body>
 
 </html>

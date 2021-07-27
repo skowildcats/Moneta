@@ -16,18 +16,12 @@
   box-shadow: 0 2px 5px white;
 }
 
+#user-info div {
+  text-align: center;
+}
+
 #user-info input:focus {
   outline: none;
-}
-
-#savings {
-  display: flex; flex-direction: column;
-}
-
-#percentage {
-  position: absolute;
-  right: 10px;
-  top: 128px;
 }
 
 input[type="submit"] {
@@ -37,5 +31,7 @@ input[type="submit"] {
 #submit-info:hover {
   box-shadow: 0 2px 15px white;
 }
+
+
 
 

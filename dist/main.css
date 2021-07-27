@@ -24,12 +24,26 @@
 @-webkit-keyframes move-left {
   0% {
     transform: translate(-50%, -50%);
+    width: 250px;
   }
 
   100% {
-    transform: translate(-150%, -50%);
+    transform: translate(-250%, -50%);
+    width: 175px;
   }
 }
+
+@-webkit-keyframes resize-box {
+  0% {
+    width: 250px;
+  }
+
+  100% {
+    width: 150px;
+  }
+}
+
+
 
 
 
@@ -116,18 +130,12 @@ input[type=number]::-webkit-outer-spin-button {
   box-shadow: 0 2px 5px white;
 }
 
+#user-info div {
+  text-align: center;
+}
+
 #user-info input:focus {
   outline: none;
-}
-
-#savings {
-  display: flex; flex-direction: column;
-}
-
-#percentage {
-  position: absolute;
-  right: 10px;
-  top: 128px;
 }
 
 input[type="submit"] {
@@ -137,6 +145,8 @@ input[type="submit"] {
 #submit-info:hover {
   box-shadow: 0 2px 15px white;
 }
+
+
 
 
 

@@ -1,4 +1,5 @@
 import { receiveUser } from "./user_info";
+import { appear, disappear } from "./util";
 
 export const startDemo = () => {
   const canvas = document.getElementById("canvas");
@@ -15,11 +16,9 @@ export const startDemo = () => {
   let userInfo = document.getElementById("user-info")
 
   start.onclick = function() {
-    introduction.style.webkitAnimation = "disappear 1.5s"
-    introduction.style.webkitAnimationTimingFunction = "ease-out"
-
-    userInfo.style.webkitAnimation = "appear 3.5s"
-    userInfo.style.webkitAnimationTimingFunction = "ease-in"
+    disappear(introduction, 1.5)
+    appear(userInfo, 3.5)
+    
     userInfo.style.display = "flex"
     setTimeout(() => {
       introduction.style.display = "none"
