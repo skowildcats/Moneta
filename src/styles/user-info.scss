@@ -13,6 +13,7 @@
   border-radius: 5px;
   font: 15px;
   margin-top: 20px;
+  box-shadow: 0 2px 5px white;
 }
 
 #user-info input:focus {
@@ -28,3 +29,13 @@
   right: 10px;
   top: 128px;
 }
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+#submit-info:hover {
+  box-shadow: 0 2px 15px white;
+}
+
+
