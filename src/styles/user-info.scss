@@ -1,0 +1,30 @@
+#user-info {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  display: none;
+  width: 250px;
+}
+
+#user-info input {
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
+  font: 15px;
+  margin-top: 20px;
+}
+
+#user-info input:focus {
+  outline: none;
+}
+
+#savings {
+  display: flex; flex-direction: column;
+}
+
+#percentage {
+  position: absolute;
+  right: 10px;
+  top: 128px;
+}

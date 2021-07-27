@@ -10,17 +10,29 @@
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
-  font-family: 'Merriweather', serif;
   display: flex; flex-direction: column;
+  animation: appear 1.5s;
+  animation-timing-function: ease-in;
 }
 
 #start {
   width: 30%;
-  margin-top: 10px;
+  margin-top: 25px;
   padding: 10px;
   margin-left: auto; margin-right: auto;
   border: 1px solid white;
   cursor: pointer;
   border-radius: 5px;
+  box-shadow: 0 2px 5px white;
 }
 
+#start:hover {
+  box-shadow: 0 2px 15px white;
+}
+
+#self {
+  animation: appear 1.5s;
+  animation-timing-function: ease-in;
+  position: absolute;
+  right: 10px;
+}

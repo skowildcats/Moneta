@@ -1,6 +1,15 @@
-div, h1, h2, h3, p, button{
+div, h1, h2, h3, p, button, input{
   color: white;
   border: 0px;
   padding: 0px;
   background-color: black;
+  font-family: 'Merriweather', serif;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
 }
