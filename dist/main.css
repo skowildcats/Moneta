@@ -169,6 +169,14 @@ input[type="submit"] {
   transform: translate(-50%, 75%);
   display: none;
 }
+
+#stocks button {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+}
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/graph.scss ***!
   \*****************************************************************************************************/

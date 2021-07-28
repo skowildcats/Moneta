@@ -1,10 +1,12 @@
 import { appear, disappear } from "./util";
+import { fetchData } from "./stock";
 
 export const receiveUser = () => {
   let userInfo = document.getElementById("user-info")
   let submit = document.getElementById("submit-info")
   let infoHeader = document.getElementById("info-header")
   let stocks = document.getElementById("stocks")
+  let stock = document.getElementsByClassName("stock")
 
 
   userInfo.onsubmit = function(e) {
@@ -22,5 +24,15 @@ export const receiveUser = () => {
       submit.style.display = "none"
       infoHeader.style.display = "none"
     }, 1500)
+
+    for (let i = 0; i < stock.length; i++) {
+      stock[i].onclick = function(e) {
+        let returns 
+        fetchData(e.target.value).then(data => {returns = data})
+        setTimeout(() => {
+          console.log(returns)
+        }, 500);
+      }
+    }
   }
 }
