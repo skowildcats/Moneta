@@ -163,11 +163,12 @@ input[type="submit"] {
 #stocks {
   border: 1px solid white;
   position: absolute;
-  width: 500px;
-  height: 150px;
+  width: 420px;
   top: 50%; left: 50%;
   transform: translate(-50%, 75%);
   display: none;
+  flex-wrap: wrap;
+  border-radius: 5px;
 }
 
 #stocks input{
@@ -176,6 +177,12 @@ input[type="submit"] {
   width: 50px;
   height: 50px;
   margin: 15px;
+  box-shadow: 0 2px 5px white;
+  cursor: pointer;
+}
+
+#stocks input:hover{
+  box-shadow: 0 2px 15px white;
 }
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/graph.scss ***!

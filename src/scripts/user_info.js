@@ -16,7 +16,7 @@ export const receiveUser = () => {
     userInfo.style.webkitAnimationTimingFunction = "ease-in-out"
     disappear(submit, 1.5)
     disappear(infoHeader, 1.5)
-    stocks.style.display = "block"
+    stocks.style.display = "flex"
     
     setTimeout(() => {
       userInfo.style.transform = "translate(-250%, -50%)"
