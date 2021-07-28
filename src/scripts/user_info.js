@@ -21,7 +21,8 @@ export const receiveUser = () => {
     setTimeout(() => {
       userInfo.style.transform = "translate(-250%, -50%)"
       userInfo.style.width = "175px"
-      submit.style.display = "none"
+      submit.style.opacity = "0"
+      submit.style.cursor = "default"
       infoHeader.style.display = "none"
     }, 1500)
 
