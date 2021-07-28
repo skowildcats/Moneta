@@ -36,20 +36,28 @@
     Enter your information below
   </div>
   <form id="user-info">
-    <input type="number" min="0">
-    </input>
     <div>
+      Investment amount
+    </div>
+    <input id="investment" type="number" min="0">
+    </input>
+    <!-- <div>
       Income in USD
     </div>
     <input type="number" min="0" max="100">
     </input>
     <div>
       Percentage saved
-    </div>
+    </div> -->
     <input id="submit-info" type="submit" value="Continue">
   </form>
   <div id="chart-container">
     <canvas id="chart"></canvas>
+  </div>
+  <div id="chart-buttons">
+    <button id="move-one">Move one month</button>
+    <button id="move-five">Move five month</button>
+    <button id="fast-forward">Fast forward</button>
   </div>
   <div id="stocks" class="stocks">
     <input type="image" src="https://logo.clearbit.com/apple.com" value="AAPL" class="stock">

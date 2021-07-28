@@ -1,14 +1,18 @@
 import { appear, disappear } from "./util";
-import { fetchData } from "./stock";
+import { graphLogic } from "./graph";
 
 export const receiveUser = () => {
   let userInfo = document.getElementById("user-info")
   let submit = document.getElementById("submit-info")
   let infoHeader = document.getElementById("info-header")
-  let stocks = document.getElementById("stocks")
   let stock = document.getElementsByClassName("stock")
   let chart = document.getElementById("chart-container")
+  let investmentInput = document.getElementById("investment")
+  let investmentAmount
 
+  investmentInput.onchange = function(e) { 
+    investmentAmount = e.target.value
+  }
 
   userInfo.onsubmit = function(e) {
     e.preventDefault()
@@ -24,7 +28,6 @@ export const receiveUser = () => {
     disappear(submit, 1.5)
     disappear(infoHeader, 1.5)
     chart.style.display = "block"
-    // stocks.style.display = "flex"
     
     setTimeout(() => {
       userInfo.style.transform = "translate(-250%, -50%)"
@@ -32,16 +35,7 @@ export const receiveUser = () => {
       submit.style.opacity = "0"
       submit.style.cursor = "default"
       infoHeader.style.display = "none"
+      graphLogic(investmentAmount)
     }, 1500)
-
-    for (let i = 0; i < stock.length; i++) {
-      stock[i].onclick = function(e) {
-        let returns 
-        fetchData(e.target.value).then(data => {returns = data})
-        setTimeout(() => {
-          console.log(returns)
-        }, 500);
-      }
-    }
   }
 }
