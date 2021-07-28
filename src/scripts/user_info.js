@@ -9,7 +9,6 @@ export const receiveUser = () => {
   let stock = document.getElementsByClassName("stock")
 
 
-
   userInfo.onsubmit = function(e) {
     e.preventDefault()
     appear(stocks, 1.5)

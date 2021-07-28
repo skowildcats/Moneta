@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -47,8 +48,8 @@
     </div>
     <input id="submit-info" type="submit" value="Continue">
   </form>
-  <div id="chart">
-    Chart
+  <div id="chart-container">
+    <canvas id="chart"></canvas>
   </div>
   <div id="stocks" class="stocks">
     <input type="image" src="https://logo.clearbit.com/apple.com" value="AAPL" class="stock">
