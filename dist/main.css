@@ -43,10 +43,13 @@
   }
 }
 
-@-webkit-keyframes box-show {
-  0% {width: 1px}
-  100%{width: 500px;}
+@-webkit-keyframes pop {
+  0% {transform: scale(0);}
+  50% {transform: scale(1.25);}
+  100% {transform: scale(1);}
 }
+
+
 
 
 
@@ -161,17 +164,17 @@ input[type="submit"] {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/stock.scss ***!
   \*****************************************************************************************************/
 #stocks {
-  border: 1px solid white;
   position: absolute;
   width: 370px;
   top: 50%; left: 50%;
   transform: translate(-50%, 120%);
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   border-radius: 5px;
 }
 
 #stocks input{
+  display: none;
   border: 2px solid white;
   border-radius: 50%;
   width: 50px;

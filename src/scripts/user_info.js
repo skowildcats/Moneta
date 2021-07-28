@@ -12,14 +12,19 @@ export const receiveUser = () => {
 
   userInfo.onsubmit = function(e) {
     e.preventDefault()
-    appear(stocks, 1.5)
+
+    stock.forEach(ind => {
+      ind.style.webkitAnimation = "pop 2s"
+      ind.style.display = "block"
+    });
+
     appear(chart, 1.5)
     userInfo.style.webkitAnimation = "move-left 1.5s"
     userInfo.style.webkitAnimationTimingFunction = "ease-in-out"
     disappear(submit, 1.5)
     disappear(infoHeader, 1.5)
     chart.style.display = "block"
-    stocks.style.display = "flex"
+    // stocks.style.display = "flex"
     
     setTimeout(() => {
       userInfo.style.transform = "translate(-250%, -50%)"
