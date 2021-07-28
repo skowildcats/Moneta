@@ -8,25 +8,36 @@ document.addEventListener('DOMContentLoaded', () => {
   chart.height = "100%"
   
   let ctx = chart.getContext('2d');
-
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-],
+  
+  let data = {
+    labels: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    ],
     datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'black',
+      borderColor: 'white',
       data: [0, 10, 5, 2, 20, 30, 45],
     }]
-    },
+  }
+
+  var myChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: {
+      plugins:{   
+        legend: {
+          display: false
+          },
+        }
+      },
+      scales: {
+        backgroundColor: 'white',
+      }
   });
 
 })
