@@ -120,20 +120,35 @@ export const graphLogic = (investmentAmount) => {
     let ctx = chart.getContext('2d');
     let data = {
       labels: years.splice(0, 1),
-      datasets: [{
-        backgroundColor: 'black',
-        borderColor: 'white',
-        data: returns.splice(0, 1),
-        tension: .1,
-        pointRadius: 2,
-        borderWidth: 1,
-      }]
+      datasets: [
+        {
+          backgroundColor: 'blue',
+          borderColor: 'blue',
+          data: returns.splice(0, 1),
+          tension: .1,
+          pointRadius: 2,
+          borderWidth: 1,
+        },
+        {
+          backgroundColor: 'black',
+          borderColor: 'white',
+          data: [1000],
+          tension: .1,
+          pointRadius: 2,
+          borderWidth: 1,
+        }
+    ]
     }
 
     let myChart = new Chart(ctx, {
       type: 'line',
       data: data,
       options: {
+        responsive: true,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
         plugins:{   
           legend: {
             display: false
