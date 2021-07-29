@@ -1,4 +1,5 @@
 import { fetchData } from "./stock"
+import { appear } from "./util";
 
 export const graphLogic = (investmentAmount) => {
   let stock = document.getElementsByClassName("stock")
@@ -7,6 +8,7 @@ export const graphLogic = (investmentAmount) => {
   let stockInfo = document.getElementById("stock-info")
   let investmentInput = document.getElementById("investment")
   let userForm = document.getElementById("user-info")
+  let chartButtons = document.getElementById("chart-buttons")
   investmentAmount ? investment = investmentAmount : investment = 1000 
 
   investmentInput.onchange = function(e) {
@@ -15,6 +17,13 @@ export const graphLogic = (investmentAmount) => {
 
   for (let i = 0; i < stock.length; i++) {
     stock[i].onclick = function(e) {
+      if (chartButtons.style.display !== "block") {
+        appear(chartButtons, .5)
+        setTimeout(() => {
+          chartButtons.style.display = "block"
+        }, 500);
+      }
+
       stockInfo.innerHTML = ""
       stockBounce.style.display = "none"
       fetchData(e.target.value).then(data => {
@@ -42,9 +51,6 @@ export const graphLogic = (investmentAmount) => {
     let fastForward = document.getElementById('fast-forward')
 
     investmentInput.onchange = function(e) {
-      setTimeout(() => {
-        console.log('hi')
-      }, 1000);
       let oldInvestment = investment
       investment = e.target.value
       let multiplier = investment / oldInvestment
@@ -61,8 +67,8 @@ export const graphLogic = (investmentAmount) => {
     }
 
     userForm.onsubmit = function(e) {
-      if (stockBounce.display !== "none") {
-        stockBounce.display = "none"
+      if (stockBounce.style.display !== "none") {
+        stockBounce.styel.display = "none"
       } 
       e.preventDefault()
     }
