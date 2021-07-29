@@ -10,9 +10,9 @@ export const fetchData = (ticker) => {
 }
 
 
-export const fetchInflation = () => {
-  let url = `https://www.alphavantage.co/query?function=CPI&interval=monthly&apikey=${keys.stockAPI}`
+export const fetchIndex = () => {
+  let url = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=SPY&apikey=${keys.stockAPI}`
 
   return axios.get(url).then(data => {
-    return data}).catch(err => console.log(err))
+    return data.data["Monthly Adjusted Time Series"]}).catch(err => console.log(err))
 }
