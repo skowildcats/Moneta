@@ -37,6 +37,7 @@ export const graphLogic = (investmentAmount) => {
       }
 
       stockInfo.innerHTML = ""
+      indexInfo.innerHTML = ""
       stockBounce.style.display = "none"
       fetchData(e.target.value).then(data => {
         years = Object.keys(data).reverse()
