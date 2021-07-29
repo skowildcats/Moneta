@@ -2,17 +2,21 @@ import { fetchData } from "./stock"
 
 export const graphLogic = (investmentAmount) => {
   let stock = document.getElementsByClassName("stock")
-  let years, stockInfo, investment
+  let years, stockData, investment
+  let stockBounce = document.getElementById("stock-bounce")
+  let stockInfo = document.getElementById("stock-info")
   investmentAmount ? investment = investmentAmount : investment = 1000 
 
   for (let i = 0; i < stock.length; i++) {
     stock[i].onclick = function(e) {
+      stockInfo.innerHTML = ""
+      stockBounce.style.display = "none"
       fetchData(e.target.value).then(data => {
         years = Object.keys(data).reverse()
-        stockInfo = Object.values(data).reverse()
+        stockData = Object.values(data).reverse()
         let returns = []
-        let factor = investment / stockInfo[0]["5. adjusted close"]
-        stockInfo.forEach(ele => {
+        let factor = investment / stockData[0]["5. adjusted close"]
+        stockData.forEach(ele => {
           returns.push(Math.round(ele["5. adjusted close"] * factor))
         })
         document.getElementById('chart').remove()
@@ -31,24 +35,36 @@ export const graphLogic = (investmentAmount) => {
     let moveFive = document.getElementById('move-five')
     let fastForward = document.getElementById('fast-forward')
 
+    // stockInfo.innerHTML = ""
+
+    function updateInfo(date, newAmount) {
+      let returnPercentage = (((newAmount - investment) / investment) * 100).toFixed(2);
+      stockInfo.innerHTML = `On ${date}, your $${investment} is now $${newAmount}, returning ${returnPercentage}%`
+    }
+
     moveOne.onclick = function() {
-      myChart.config.data.labels.push(...years.splice(0, 1))
-      myChart.config.data.datasets[0].data.push(...returns.splice(0, 1))
-      myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
-      myChart.update()
+      if (!years.length <= 0){
+        myChart.config.data.labels.push(years.splice(0, 1))
+        myChart.config.data.datasets[0].data.push(...returns.splice(0, 1))
+        myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
+        updateInfo(myChart.config.data.labels[myChart.config.data.labels.length - 1], myChart.config.data.datasets[0].data[myChart.config.data.datasets[0].data.length - 1])
+        myChart.update()
+      }
     }
 
     moveFive.onclick = function() {
       myChart.config.data.labels.push(...years.splice(0, 5))
       myChart.config.data.datasets[0].data.push(...returns.splice(0, 5))
       myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
+      updateInfo(myChart.config.data.labels[myChart.config.data.labels.length - 1], myChart.config.data.datasets[0].data[myChart.config.data.datasets[0].data.length - 1])
       myChart.update()
     }
 
     fastForward.onclick = function() {
-      myChart.config.data.labels.push(...years)
-      myChart.config.data.datasets[0].data.push(...returns)
+      myChart.config.data.labels.push(...years.splice(0, years.length))
+      myChart.config.data.datasets[0].data.push(...returns.splice(0, returns.length))
       myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
+      updateInfo(myChart.config.data.labels[myChart.config.data.labels.length - 1], myChart.config.data.datasets[0].data[myChart.config.data.datasets[0].data.length - 1])
       myChart.update()
     }
 

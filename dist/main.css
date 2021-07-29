@@ -23,12 +23,12 @@
 
 @-webkit-keyframes move-left {
   0% {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     width: 250px;
   }
 
   100% {
-    transform: translate(-250%, -50%);
+    transform: translate(-250%, -80%);
     width: 175px;
   }
 }
@@ -137,7 +137,7 @@ input[type=number]::-webkit-outer-spin-button {
 #user-info {
   position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -80%);
   flex-direction: column;
   display: none;
   width: 250px;
@@ -179,10 +179,11 @@ input[type="submit"] {
   position: absolute;
   width: 370px;
   top: 50%; left: 50%;
-  transform: translate(-50%, 80%);
-  display: flex;
+  transform: translate(-50%, 130%);
+  display: none;
   flex-wrap: wrap;
   border-radius: 5px;
+  height: 125px;
 }
 
 #stocks input{
@@ -200,13 +201,15 @@ input[type="submit"] {
   box-shadow: 0 2px 15px white;
 }
 
-#stock-header {
+#stock-bounce {
+  position: relative;
   margin-top: 20px;
   margin-left: auto; margin-right: auto;
   animation: bounce .5s;
   animation-iteration-count: infinite;
   text-shadow: 2px 2px 10px white;
   cursor: default;
+  display: none;
 }
 /*!*****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/graph.scss ***!
@@ -216,7 +219,7 @@ input[type="submit"] {
   width: 500px;
   height: 400px;
   top: 50%; left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -60%);
   display: none;
   z-index: -1;
 }
@@ -229,6 +232,21 @@ input[type="submit"] {
   border: 1px solid white;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#info-container {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(130%, -70%);
+  height: 400px;
+  width: 200px;
+  display: none;
+}
+
+#info-container > div {
+  position: inherit;
+  top: 50%;
+  transform: translateY(-50%);
 }
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

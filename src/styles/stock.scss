@@ -2,10 +2,11 @@
   position: absolute;
   width: 370px;
   top: 50%; left: 50%;
-  transform: translate(-50%, 80%);
-  display: flex;
+  transform: translate(-50%, 130%);
+  display: none;
   flex-wrap: wrap;
   border-radius: 5px;
+  height: 125px;
 }
 
 #stocks input{
@@ -23,11 +24,13 @@
   box-shadow: 0 2px 15px white;
 }
 
-#stock-header {
+#stock-bounce {
+  position: relative;
   margin-top: 20px;
   margin-left: auto; margin-right: auto;
   animation: bounce .5s;
   animation-iteration-count: infinite;
   text-shadow: 2px 2px 10px white;
   cursor: default;
+  display: none;
 }

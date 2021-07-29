@@ -20,12 +20,12 @@
 
 @-webkit-keyframes move-left {
   0% {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
     width: 250px;
   }
 
   100% {
-    transform: translate(-250%, -50%);
+    transform: translate(-250%, -80%);
     width: 175px;
   }
 }
