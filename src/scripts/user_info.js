@@ -9,7 +9,7 @@ export const receiveUser = () => {
   let chart = document.getElementById("chart-container")
   let investmentInput = document.getElementById("investment")
   let stockBounce = document.getElementById("stock-bounce")
-  let stockInfo=document.getElementById("info-container")
+  let stockInfo = document.getElementById("info-container")
   let investmentAmount
 
   investmentInput.onchange = function(e) { 

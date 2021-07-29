@@ -5,7 +5,13 @@ export const graphLogic = (investmentAmount) => {
   let years, stockData, investment
   let stockBounce = document.getElementById("stock-bounce")
   let stockInfo = document.getElementById("stock-info")
+  let investmentInput = document.getElementById("investment")
+  let userForm = document.getElementById("user-info")
   investmentAmount ? investment = investmentAmount : investment = 1000 
+
+  investmentInput.onchange = function(e) {
+    investment = e.target.value
+  }
 
   for (let i = 0; i < stock.length; i++) {
     stock[i].onclick = function(e) {
@@ -35,11 +41,35 @@ export const graphLogic = (investmentAmount) => {
     let moveFive = document.getElementById('move-five')
     let fastForward = document.getElementById('fast-forward')
 
-    // stockInfo.innerHTML = ""
+    investmentInput.onchange = function(e) {
+      setTimeout(() => {
+        console.log('hi')
+      }, 1000);
+      let oldInvestment = investment
+      investment = e.target.value
+      let multiplier = investment / oldInvestment
+      returns = returns.map(ele => {
+        return ele * multiplier
+      })
+      myChart.config.data.datasets[0].data = myChart.config.data.datasets[0].data.map(ele => {
+        return ele * multiplier
+      })
+      if (myChart.config.data.labels.length > 1) {
+        updateInfo(myChart.config.data.labels[myChart.config.data.labels.length - 1], myChart.config.data.datasets[0].data[myChart.config.data.datasets[0].data.length - 1])
+      }
+      myChart.update()
+    }
+
+    userForm.onsubmit = function(e) {
+      if (stockBounce.display !== "none") {
+        stockBounce.display = "none"
+      } 
+      e.preventDefault()
+    }
 
     function updateInfo(date, newAmount) {
       let returnPercentage = (((newAmount - investment) / investment) * 100).toFixed(2);
-      stockInfo.innerHTML = `On ${date}, your $${investment} is now $${newAmount}, returning ${returnPercentage}%`
+      stockInfo.innerHTML = `On ${date}, your $${investment} is now $${Math.round(newAmount)}, returning ${returnPercentage}%`
     }
 
     moveOne.onclick = function() {
