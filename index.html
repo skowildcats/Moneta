@@ -15,7 +15,10 @@
 </head>
 
 <body>
-  <canvas id="canvas"></canvas>
+  <div id="disclaimer">
+    Disclaimer: I am not a financial advisor. This demo is for educational purposes only. Past performance is not
+    indicative of future results.
+  </div>
   <div id="self">
     Project by Jonathan Chen
   </div>
@@ -32,12 +35,9 @@
     </div>
     <button id="start">Begin Demo</button>
   </div>
-  <div id="info-header">
-    Enter your information below
-  </div>
   <form id="user-info">
     <div>
-      Investment amount
+      One off investment amount
     </div>
     <input id="investment" type="number" min="0">
     </input>
@@ -70,14 +70,14 @@
     <input type="image" src="https://logo.clearbit.com/target.com" value="TGT" class="stock">
     <input type="image" src="https://logo.clearbit.com/tesla.com" value="TSLA" class="stock">
     <input type="image" src="https://logo.clearbit.com/zoom.com" value="ZM" class="stock">
+    <div id="stock-header">
+      Click on one of the icons above to get started
+    </div>
   </div>
   <div id="box-left"></div>
   <div id="box-top"></div>
   <div id="box-right"></div>
   <div id="box-bottom"></div>
-  <div>
-    Disclaimer: I am not a financial advisor. This demo is for educational purposes only. Past performance is not indicative of future results.
-  </div>
 </body>
 
 </html>

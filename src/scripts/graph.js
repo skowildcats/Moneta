@@ -34,18 +34,21 @@ export const graphLogic = (investmentAmount) => {
     moveOne.onclick = function() {
       myChart.config.data.labels.push(...years.splice(0, 1))
       myChart.config.data.datasets[0].data.push(...returns.splice(0, 1))
+      myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
       myChart.update()
     }
 
     moveFive.onclick = function() {
       myChart.config.data.labels.push(...years.splice(0, 5))
       myChart.config.data.datasets[0].data.push(...returns.splice(0, 5))
+      myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
       myChart.update()
     }
 
     fastForward.onclick = function() {
       myChart.config.data.labels.push(...years)
       myChart.config.data.datasets[0].data.push(...returns)
+      myChart.config.data.labels.length >= 50 ? myChart.config.data.datasets[0].pointRadius = 0 : myChart.config.data.datasets[0].pointRadius = 2
       myChart.update()
     }
 
@@ -59,7 +62,8 @@ export const graphLogic = (investmentAmount) => {
         borderColor: 'white',
         data: returns.splice(0, 1),
         tension: .1,
-        pointRadius: null,
+        pointRadius: 2,
+        borderWidth: 1,
       }]
     }
 
@@ -70,14 +74,10 @@ export const graphLogic = (investmentAmount) => {
         plugins:{   
           legend: {
             display: false
-            },
-          }
+          },
         },
-        scales: {
-          backgroundColor: 'white',
-        }
+      },
     });
-    }
-
+  }
 }
 

@@ -5,8 +5,6 @@
   z-index: -5;
 }
 
-
-
 #introduction {
   position: absolute;
   top: 50%; left: 50%;
@@ -37,4 +35,12 @@
   animation-timing-function: ease-in;
   position: absolute;
   right: 10px;
+  font-size: 10.5px;
+}
+
+#disclaimer {
+  position: absolute;
+  font-size: 10.5px;
+  left: 50%;
+  transform: translate(-50%, 0%); 
 }
