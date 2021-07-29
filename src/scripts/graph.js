@@ -17,6 +17,11 @@ export const graphLogic = (investmentAmount) => {
 
   for (let i = 0; i < stock.length; i++) {
     stock[i].onclick = function(e) {
+      for (let i = 0; i < stock.length; i++) {
+        stock[i].style.boxShadow = "0px 2px 5px white"
+      }
+      stock[i].style.boxShadow = "0px 0px 30px white"
+
       if (chartButtons.style.display !== "block") {
         appear(chartButtons, .5)
         setTimeout(() => {
@@ -75,7 +80,13 @@ export const graphLogic = (investmentAmount) => {
 
     function updateInfo(date, newAmount) {
       let returnPercentage = (((newAmount - investment) / investment) * 100).toFixed(2);
-      stockInfo.innerHTML = `On ${date}, your $${investment} is now $${Math.round(newAmount)}, returning ${returnPercentage}%`
+      let annualReturns = ""
+      if (years.length <= 0) {
+        let periodYears = (myChart.config.data.labels.length - 1) / 12
+        annualReturns = ((Math.pow((1 + ((newAmount - investment) / investment)), (1 / periodYears)) - 1) * 100).toFixed(2);
+        annualReturns = annualReturns.toString() + "% annually and "
+      }
+      stockInfo.innerHTML = `On ${date}, your $${investment} is now $${Math.round(newAmount)}, returning ${annualReturns} ${returnPercentage}% over this period`
     }
 
     moveOne.onclick = function() {
