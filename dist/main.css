@@ -69,8 +69,12 @@ div, h1, h2, h3, p, button, input{
   color: white;
   border: 0px;
   padding: 0px;
-  background-color: black;
   font-family: 'Merriweather', serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 input[type="number"] {
@@ -116,13 +120,32 @@ input[type=number]::-webkit-outer-spin-button {
   box-shadow: 0 2px 15px white;
 }
 
-#self {
+.self {
   animation: appear 1.5s;
   animation-timing-function: ease-in;
   position: absolute;
   right: 10px;
   font-size: 10.5px;
+  cursor: pointer;
+  text-shadow: 0 2px 5px white;
 }
+
+.self-links {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+}
+
+.self-links:hover {
+  display: flex;
+}
+
+.self-links a {
+  margin-top: 5px; margin-bottom: 5px;
+}
+
+.self-header:hover + .self-links {display: flex;}
+
 
 #disclaimer {
   position: absolute;
@@ -271,5 +294,5 @@ input[type="submit"] {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 * {
-  background-color: black;
+  background-color: #121212;
 }

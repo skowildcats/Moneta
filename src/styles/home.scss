@@ -30,13 +30,32 @@
   box-shadow: 0 2px 15px white;
 }
 
-#self {
+.self {
   animation: appear 1.5s;
   animation-timing-function: ease-in;
   position: absolute;
   right: 10px;
   font-size: 10.5px;
+  cursor: pointer;
+  text-shadow: 0 2px 5px white;
 }
+
+.self-links {
+  display: none;
+  flex-direction: column;
+  text-align: center;
+}
+
+.self-links:hover {
+  display: flex;
+}
+
+.self-links a {
+  margin-top: 5px; margin-bottom: 5px;
+}
+
+.self-header:hover + .self-links {display: flex;}
+
 
 #disclaimer {
   position: absolute;
