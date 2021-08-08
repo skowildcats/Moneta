@@ -1,6 +1,6 @@
 
 # Moneta
-  Moneta is a data visualization/education interactive demo that intends to help the user familiarize themselves with the stock market the power of compound interest.
+  [Moneta](https://skowildcats.github.io/Moneta/) is a data visualization/education interactive demo that intends to help the user familiarize themselves with the stock market the power of compound interest.
   User will be able to input their income, expenditure and savings and select from companies whos product they may user in their everyday life to see how their money can grow exponentially.
   
 ## MVP
